@@ -63,11 +63,13 @@ nav ul li a:hover {
 
 /* Hero section (optional, you may remove image) */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 60px 40px;
+  justify-content: center;
+  gap: 30px;
+  padding: 100px 40px; /* more vertical spacing */
+  text-align: center;
 }
 
 .hero h1 {
@@ -153,6 +155,48 @@ nav ul li a:hover {
 .product-card:hover img {
   transform: scale(1.05);
 }
+
+.side-menu {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu ul li a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  text-indent: -9999px; /* hide text */
+  position: relative;
+}
+
+.side-menu ul li a::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--deep);
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.side-menu ul li a:hover::after {
+  color: var(--accent);
+}
+
 
 /* Folder inside product card */
 .folder {
