@@ -1,105 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SUE.LB</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <a class="logo" href="index.html">
-      <svg width="48" height="48" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="48" fill="#800020" />
-        <text x="50%" y="54%" text-anchor="middle" font-family="Playfair Display, serif" font-size="46" fill="#f5f0eb" dy="0.35em">S</text>
-      </svg>
-      <span class="brand-name">SUE.LB</span>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="joleia.html">JOLEIA</a></li>
-      </ul>
-    </nav>
-  </header>
+<main>
+  <h1 class="section-title">SUE.LB Collection</h1>
 
-  <!-- Products Section -->
-  <main>
-    <h1 class="section-title">SUE.LB Collection</h1>
-    <div class="products-grid">
-      <div class="product-card">
-        <div class="product-media">
-          <img src="images/shoes.jpg" alt="Elegant Shoes">
-        </div>
-        <h3>Elegant Shoes</h3>
-        <p class="subtitle">Italian leather</p>
-        <p class="price">€180</p>
-        <span class="badge">New</span>
-      </div>
-
-      <div class="product-card">
-        <div class="product-media">
-          <img src="images/bag1.jpg" alt="Chic Bag">
-        </div>
-        <h3>Chic Bag</h3>
-        <p class="subtitle">Minimal silhouette</p>
-        <p class="price">€190</p>
-      </div>
-
-      <div class="product-card">
-        <div class="product-media">
-          <img src="images/sunglasses.jpg" alt="Classic Sunglasses">
-        </div>
-        <h3>Classic Sunglasses</h3>
-        <p class="subtitle">UV400 protection</p>
-        <p class="price">€95</p>
-        <span class="badge">Best Seller</span>
-      </div>
-
-      <div class="product-card">
-        <div class="product-media">
-          <img src="images/accessories.jpg" alt="Golden Accessories">
-        </div>
-        <h3>Golden Accessories</h3>
-        <p class="subtitle">Limited edition</p>
-        <p class="price">€45</p>
+  <div class="products-grid">
+    <!-- Bags -->
+    <div class="product-card">
+      <h2 class="folder-title">Bags</h2>
+      <div class="product-media">
+        <img src="images/bag1.jpg" alt="Bag 1">
+        <img src="images/bag2.jpg" alt="Bag 2">
       </div>
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 SUE.LB. All rights reserved.</p>
-  </footer>
+    <!-- Shoes -->
+    <div class="product-card">
+      <h2 class="folder-title">Shoes</h2>
+      <div class="product-media">
+        <img src="images/shoes.jpg" alt="Shoes">
+      </div>
+    </div>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox">
-    <span id="lightbox-close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" src="">
+    <!-- Gold-Plated Jewellery -->
+    <div class="product-card">
+      <h2 class="folder-title">Gold-Plated Jewellery</h2>
+      <div class="product-media">
+        <img src="images/accessories.jpg" alt="Gold Accessories">
+      </div>
+    </div>
+
+    <!-- Miyooki Beads -->
+    <div class="product-card">
+      <h2 class="folder-title">Miyooki Beads</h2>
+      <div class="product-media">
+        <img src="images/beads.jpg" alt="Miyooki Beads">
+      </div>
+    </div>
   </div>
-
-  <!-- Lightbox Script -->
-  <script>
-    document.querySelectorAll('.product-media img').forEach(img => {
-      img.addEventListener('click', () => {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-      });
-    });
-
-    document.getElementById('lightbox-close').addEventListener('click', () => {
-      document.getElementById('lightbox').style.display = 'none';
-    });
-
-    document.getElementById('lightbox').addEventListener('click', (e) => {
-      if(e.target.id === 'lightbox') {
-        document.getElementById('lightbox').style.display = 'none';
-      }
-    });
-  </script>
-</body>
-</html>
+</main>
