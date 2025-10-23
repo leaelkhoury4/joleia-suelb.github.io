@@ -9,15 +9,16 @@
 </head>
 <body>
 
-    <!-- Left Side Menu -->
-  <nav class="side-menu">
-    <ul>
-      <li><a href="shop.html" data-text="Shop"></a></li>
-      <li><a href="about.html" data-text="About Us"></a></li>
-      <li><a href="contact.html" data-text="Contact Us"></a></li>
-    </ul>
-  </nav>
-  
+    <!-- Sidebar Three-Dots Menu -->
+<div class="dot-menu">
+  <div class="dot" id="dot-menu-toggle"></div>
+  <ul class="dot-menu-list" id="dot-menu-list">
+    <li><a href="Shop.html">Shop</a></li>
+    <li><a href="About.html">About Us</a></li>
+    <li><a href="Contact.html">Contact Us</a></li>
+  </ul>
+</div>
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-text">
@@ -90,5 +91,25 @@
       if(e.target.id === 'lightbox') document.getElementById('lightbox').style.display = 'none';
     });
   </script>
+  <script>
+  const toggle = document.getElementById('dot-menu-toggle');
+  const menu = document.getElementById('dot-menu-list');
+
+  toggle.addEventListener('click', () => {
+    if(menu.style.display === 'block') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'block';
+    }
+  });
+
+  // Close menu if click outside
+  document.addEventListener('click', (e) => {
+    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+      menu.style.display = 'none';
+    }
+  });
+</script>
+
 </body>
 </html>
