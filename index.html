@@ -15,7 +15,9 @@
         <circle cx="50" cy="50" r="48" fill="#800020" />
         <text x="50%" y="54%" text-anchor="middle" font-family="Playfair Display, serif" font-size="46" fill="#f5f0eb" dy="0.35em">S</text>
       </svg>
-      <span class="brand-name">SUE.LB & JOLEIA</span>
+      <span class="brand-name">
+        <span style="color:#800020">SUE.LB</span> & <span style="color:#800020">JOLEIA</span>
+      </span>
     </a>
     <nav>
       <ul>
@@ -25,19 +27,15 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section removed (no image) -->
   <section class="hero">
     <div class="hero-text">
       <h1>Luxury Bags & Accessories</h1>
-      <p class="subtitle">Curated collections of bags, shoes, belts, sunglasses, and more.</p>
-      <a href="sue.html" class="btn btn-primary">Shop SUE.LB</a>
-    </div>
-    <div class="hero-image product-media">
-      <img src="images/bag1.jpg" alt="Luxury bag">
+      <p class="subtitle">Curated collections of bags, shoes, jewellery, sunglasses, and more.</p>
     </div>
   </section>
 
-  <!-- Sample Product Grid -->
+  <!-- Featured Products -->
   <section class="products-section">
     <h2 class="section-title">Featured Products</h2>
     <div class="products-grid">
@@ -83,7 +81,6 @@
     <img class="lightbox-content" id="lightbox-img" src="">
   </div>
 
-  <!-- Lightbox Script -->
   <script>
     document.querySelectorAll('.product-media img').forEach(img => {
       img.addEventListener('click', () => {
@@ -93,11 +90,9 @@
         lightbox.style.display = 'flex';
       });
     });
-
     document.getElementById('lightbox-close').addEventListener('click', () => {
       document.getElementById('lightbox').style.display = 'none';
     });
-
     document.getElementById('lightbox').addEventListener('click', (e) => {
       if(e.target.id === 'lightbox') {
         document.getElementById('lightbox').style.display = 'none';
