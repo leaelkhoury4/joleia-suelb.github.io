@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOLEIA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">
+      <svg width="48" height="48" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="48" fill="#800020" />
+        <text x="50%" y="54%" text-anchor="middle" font-family="Playfair Display, serif" font-size="46" fill="#f5f0eb" dy="0.35em">J</text>
+      </svg>
+      <span class="brand-name">JOLEIA</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sue.html">SUE.LB</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="section-title">JOLEIA Collection</h1>
+    <div class="categories-grid">
+      <div class="category-card" data-category="bags">
+        <div class="category-media"><img src="images/bag1.jpg" alt="Bags"></div>
+        <h3>Bags</h3>
+      </div>
+      <div class="category-card" data-category="shoes">
+        <div class="category-media"><img src="images/shoes.jpg" alt="Shoes"></div>
+        <h3>Shoes</h3>
+      </div>
+      <div class="category-card" data-category="jewellery">
+        <div class="category-media"><img src="images/accessories.jpg" alt="Gold Jewellery"></div>
+        <h3>Gold Jewellery</h3>
+      </div>
+      <div class="category-card" data-category="miyuki">
+        <div class="category-media"><img src="images/miyuki.jpg" alt="Miyuki Beads"></div>
+        <h3>Miyuki Beads</h3>
+      </div>
+    </div>
+
+    <div id="category-products" class="products-grid" style="display:none;"></div>
+    <button id="back-to-categories" class="btn btn-primary" style="display:none; margin:20px auto; display:block;">Back to Categories</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 JOLEIA. All rights reserved.</p>
+  </footer>
+
+  <div id="lightbox" class="lightbox">
+    <span id="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" src="">
+  </div>
+
+  <script>
+    const categories = {
+      bags: [
+        {src:"images/bag1.jpg", name:"Elegant Bag 1", price:"€220"},
+        {src:"images/bag2.jpg", name:"Elegant Bag 2", price:"€240"}
+      ],
+      shoes: [
+        {src:"images/shoes.jpg", name:"Classic Shoes", price:"€180"},
+        {src:"images/shoes2.jpg", name:"Heels", price:"€200"}
+      ],
+      jewellery: [
+        {src:"images/accessories.jpg", name:"Gold Necklace", price:"€120"},
+        {src:"images/accessories2.jpg", name:"Gold Earrings", price:"€90"}
+      ],
+      miyuki: [
+        {src:"images/miyuki.jpg", name:"Miyuki Bracelet", price:"€45"},
+        {src:"images/miyuki2.jpg", name:"Miyuki Necklace", price:"€60"}
+      ]
+    };
+
+    const categoryCards = document.querySelectorAll('.category-card');
+    const productsGrid = document.getElementById('category-products');
+    const backBtn = document.getElementById('back-to-categories');
+    const categoriesGrid = document.querySelector('.categories-grid');
+
+    categoryCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const cat = card.dataset.category;
+        productsGrid.innerHTML = '';
+        categoriesGrid.style.display = 'none';
+        productsGrid.style.display = 'grid';
+        backBtn.style.display = 'block';
+        categories[cat].forEach(p => {
+          const div = document.createElement('div');
+          div.className = 'product-card';
+          div.innerHTML = `
+            <div class="product-media"><img src="${p.src}" alt="${p.name}"></div>
+            <h3>${p.name}</h3>
+            <p class="price">${p.price}</p>
+          `;
+          productsGrid.appendChild(div);
+        });
+        initLightbox();
+      });
+    });
+
+    backBtn.addEventListener('click', () => {
+      productsGrid.style.display = 'none';
+      categoriesGrid.style.display = 'grid';
+      backBtn.style.display = 'none';
+    });
+
+    function initLightbox() {
+      document.querySelectorAll('.product-media img').forEach(img => {
+        img.addEventListener('click', () => {
+          const lightbox = document.getElementById('lightbox');
+          const lightboxImg = document.getElementById('lightbox-img');
+          lightboxImg.src = img.src;
+          lightbox.style.display = 'flex';
+        });
+      });
+    }
+
+    document.getElementById('lightbox-close').addEventListener('click', () => {
+      document.getElementById('lightbox').style.display = 'none';
+    });
+    document.getElementById('lightbox').addEventListener('click', e => {
+      if(e.target.id === 'lightbox') document.getElementById('lightbox').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
+
 
