@@ -1,24 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Joleia & Sue.lb Concept Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOLEIA & SUE.LB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to Our Brands</h1>
-  <div class="brands">
-    <a href="joleia.html" class="brand-card">
-      <img src="images/bag1.jpg" alt="Joleia">
-      <h2>JOLEIA</h2>
-      <p>Luxury bags & accessories</p>
+  <!-- Header -->
+  <header>
+    <a class="logo" href="#">
+      <svg width="48" height="48" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="48" fill="#800020" />
+        <text x="50%" y="54%" text-anchor="middle" font-family="Playfair Display, serif" font-size="46" fill="#f5f0eb" dy="0.35em">S</text>
+      </svg>
+      <span class="brand-name">SUE.LB & JOLEIA</span>
     </a>
+    <nav>
+      <ul>
+        <li><a href="joleia.html">JOLEIA</a></li>
+        <li><a href="sue.html">SUE.LB</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <a href="sue.html" class="brand-card">
-      <img src="images/shoes.jpg" alt="Sue.lb">
-      <h2>SUE.LB Concept Store</h2>
-      <p>Bags, shoes, accessories & more</p>
-    </a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Luxury Bags & Accessories</h1>
+      <p class="subtitle">Curated collections of bags, shoes, belts, sunglasses, and more.</p>
+      <a href="sue.html" class="btn btn-primary">Shop SUE.LB</a>
+    </div>
+    <div class="hero-image product-media">
+      <img src="images/bag1.jpg" alt="Luxury bag">
+    </div>
+  </section>
+
+  <!-- Sample Product Grid -->
+  <section class="products-section">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-media">
+          <img src="images/bag2.jpg" alt="Ava Bag">
+        </div>
+        <h3>Ava Bag</h3>
+        <p class="subtitle">Signature clasp</p>
+        <p class="price">€260</p>
+        <span class="badge">New Arrival</span>
+      </div>
+
+      <div class="product-card">
+        <div class="product-media">
+          <img src="images/shoes.jpg" alt="Elegant Shoes">
+        </div>
+        <h3>Elegant Shoes</h3>
+        <p class="subtitle">Italian leather</p>
+        <p class="price">€180</p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-media">
+          <img src="images/sunglasses.jpg" alt="Classic Sunglasses">
+        </div>
+        <h3>Classic Sunglasses</h3>
+        <p class="subtitle">UV400 protection</p>
+        <p class="price">€95</p>
+        <span class="badge">Best Seller</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 JOLEIA & SUE.LB. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span id="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" src="">
   </div>
+
+  <!-- Lightbox Script -->
+  <script>
+    document.querySelectorAll('.product-media img').forEach(img => {
+      img.addEventListener('click', () => {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    document.getElementById('lightbox-close').addEventListener('click', () => {
+      document.getElementById('lightbox').style.display = 'none';
+    });
+
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if(e.target.id === 'lightbox') {
+        document.getElementById('lightbox').style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
