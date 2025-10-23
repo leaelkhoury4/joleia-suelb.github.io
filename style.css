@@ -87,6 +87,22 @@ nav ul li a:hover {
   box-shadow: 0 20px 40px rgba(61,44,42,0.12);
 }
 
+/* Hero buttons */
+.hero-buttons {
+  display: flex;
+  gap: 20px; /* space between buttons */
+  margin-top: 20px;
+}
+
+.category-card h3 {
+  color: var(--deep); /* default dark text */
+  transition: color 0.3s;
+}
+
+.category-card:hover h3 {
+  color: var(--accent); /* burgundy on hover */
+}
+
 .btn {
   text-decoration: none;
   background: var(--accent);
