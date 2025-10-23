@@ -15,9 +15,7 @@
         <circle cx="50" cy="50" r="48" fill="#800020" />
         <text x="50%" y="54%" text-anchor="middle" font-family="Playfair Display, serif" font-size="46" fill="#f5f0eb" dy="0.35em">S</text>
       </svg>
-      <span class="brand-name">
-        <span style="color:#800020">SUE.LB</span> & <span style="color:#800020">JOLEIA</span>
-      </span>
+      <span class="brand-name">SUE.LB & JOLEIA</span>
     </a>
     <nav>
       <ul>
@@ -27,15 +25,22 @@
     </nav>
   </header>
 
-  <!-- Hero Section removed (no image) -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-text">
       <h1>Luxury Bags & Accessories</h1>
-      <p class="subtitle">Curated collections of bags, shoes, jewellery, sunglasses, and more.</p>
+      <p class="subtitle">Curated collections of bags, shoes, belts, sunglasses, and more.</p>
+      <div class="hero-buttons">
+        <a href="sue.html" class="btn btn-primary">SUE.LB</a>
+        <a href="joleia.html" class="btn btn-primary">JOLEIA</a>
+      </div>
+    </div>
+    <div class="hero-image product-media">
+      <img src="images/bag1.jpg" alt="Luxury bag">
     </div>
   </section>
 
-  <!-- Featured Products -->
+  <!-- Sample Featured Products -->
   <section class="products-section">
     <h2 class="section-title">Featured Products</h2>
     <div class="products-grid">
@@ -48,7 +53,6 @@
         <p class="price">€260</p>
         <span class="badge">New Arrival</span>
       </div>
-
       <div class="product-card">
         <div class="product-media">
           <img src="images/shoes.jpg" alt="Elegant Shoes">
@@ -57,7 +61,6 @@
         <p class="subtitle">Italian leather</p>
         <p class="price">€180</p>
       </div>
-
       <div class="product-card">
         <div class="product-media">
           <img src="images/sunglasses.jpg" alt="Classic Sunglasses">
@@ -75,7 +78,7 @@
     <p>&copy; 2025 JOLEIA & SUE.LB. All rights reserved.</p>
   </footer>
 
-  <!-- Lightbox Modal -->
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span id="lightbox-close">&times;</span>
     <img class="lightbox-content" id="lightbox-img" src="">
@@ -93,10 +96,8 @@
     document.getElementById('lightbox-close').addEventListener('click', () => {
       document.getElementById('lightbox').style.display = 'none';
     });
-    document.getElementById('lightbox').addEventListener('click', (e) => {
-      if(e.target.id === 'lightbox') {
-        document.getElementById('lightbox').style.display = 'none';
-      }
+    document.getElementById('lightbox').addEventListener('click', e => {
+      if(e.target.id === 'lightbox') document.getElementById('lightbox').style.display = 'none';
     });
   </script>
 </body>
