@@ -1,95 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JOLEIA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <a class="logo" href="index.html">
-      <svg width="48" height="48" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="48" fill="#800020" />
-        <text x="50%" y="54%" text-anchor="middle" font-family="Playfair Display, serif" font-size="46" fill="#f5f0eb" dy="0.35em">J</text>
-      </svg>
-      <span class="brand-name">JOLEIA</span>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="sue.html">SUE.LB</a></li>
-      </ul>
-    </nav>
-  </header>
+<main>
+  <h1 class="section-title">JOLEIA Collection</h1>
 
-  <!-- Products Section -->
-  <main>
-    <h1 class="section-title">JOLEIA Collection</h1>
-    <div class="products-grid">
-      <div class="product-card">
-        <div class="product-media">
-          <img src="images/bag1.jpg" alt="Elegant Bag 1">
-        </div>
-        <h3>Elegant Bag 1</h3>
-        <p class="subtitle">Signature style</p>
-        <p class="price">€220</p>
-        <span class="badge">New Arrival</span>
-      </div>
-
-      <div class="product-card">
-        <div class="product-media">
-          <img src="images/bag2.jpg" alt="Elegant Bag 2">
-        </div>
-        <h3>Elegant Bag 2</h3>
-        <p class="subtitle">Classic leather</p>
-        <p class="price">€240</p>
-      </div>
-
-      <div class="product-card">
-        <div class="product-media">
-          <img src="images/belt.jpg" alt="Luxury Belt">
-        </div>
-        <h3>Luxury Belt</h3>
-        <p class="subtitle">Italian craftsmanship</p>
-        <p class="price">€95</p>
+  <div class="products-grid">
+    <!-- Bags -->
+    <div class="product-card">
+      <h2 class="folder-title">Bags</h2>
+      <div class="product-media">
+        <img src="images/bag1.jpg" alt="Elegant Bag 1">
+        <img src="images/bag2.jpg" alt="Elegant Bag 2">
       </div>
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 JOLEIA. All rights reserved.</p>
-  </footer>
-
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox">
-    <span id="lightbox-close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" src="">
+    <!-- Sunglasses -->
+    <div class="product-card">
+      <h2 class="folder-title">Sunglasses</h2>
+      <div class="product-media">
+        <img src="images/sunglasses.jpg" alt="Classic Sunglasses">
+      </div>
+    </div>
   </div>
-
-  <!-- Lightbox Script -->
-  <script>
-    document.querySelectorAll('.product-media img').forEach(img => {
-      img.addEventListener('click', () => {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-      });
-    });
-
-    document.getElementById('lightbox-close').addEventListener('click', () => {
-      document.getElementById('lightbox').style.display = 'none';
-    });
-
-    document.getElementById('lightbox').addEventListener('click', (e) => {
-      if(e.target.id === 'lightbox') {
-        document.getElementById('lightbox').style.display = 'none';
-      }
-    });
-  </script>
-</body>
-</html>
+</main>
